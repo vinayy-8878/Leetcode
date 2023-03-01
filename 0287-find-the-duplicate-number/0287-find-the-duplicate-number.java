@@ -3,20 +3,19 @@ class Solution {
         int i=0;
         
             while(i<nums.length){
-                if(nums[i]!=i+1){
+               
                       int check=nums[i]-1;
                       if(nums[i]!=nums[check]){
                       swap(nums,i,check);
                        } 
                       else{
-                      return nums[i];
-                      }      
-                }
-           else{
-                     i++;
-                }
-               
+                      i++;
+                      }
             }
+         for(int index=0;index<nums.length;index++){
+             if(nums[index]!=index+1)
+                 return nums[ index];
+         }
         return -1;
         }
          
