@@ -14,10 +14,10 @@ class Solution {
              count++;
             k=k/10;
         }
-        Collections.reverse(list);
+       // Collections.reverse(list);
            int[] arr=new int[count];
         for(int i=0;i<count;i++){
-            arr[i]=list.get(i);
+            arr[count-1-i]=list.get(i);
         }
         return arr;
     }
