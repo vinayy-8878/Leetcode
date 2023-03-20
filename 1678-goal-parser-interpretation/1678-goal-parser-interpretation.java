@@ -7,9 +7,13 @@ class Solution {
            }
            else if(command.charAt(i)=='('  && command.charAt(i+1)==')'  ){
              sb.append("o");
+               i++;
            }
            else if(command.charAt(i)=='(' && command.charAt(i+1)=='a' ){
                sb.append("al");
+               i++;
+               i++;
+               i++;
            }
        }
         return sb.toString();
