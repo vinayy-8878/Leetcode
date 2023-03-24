@@ -1,16 +1,18 @@
 class Solution {
     public String freqAlphabets(String s) {
-        StringBuilder answer = new StringBuilder();
+        String answer = "";
         for(int i=0;i<s.length();i++){
             if(i+2<s.length() && s.charAt(i+2)=='#'){
-             answer.append((char)(10*(s.charAt(i)-48)+s.charAt(i+1)+48));
+             int num=Integer.parseInt(s.substring(i,i+2));
+                answer+=(char)(96+num);
                 i=i+2;
             }
             else
             {
-              answer.append((char)(s.charAt(i)+48));
+              int num=Integer.parseInt(s.substring(i,i+1));
+                answer+=(char)(96+num);
             }
         }
-        return new String(answer);
+        return answer;
     }
 }
