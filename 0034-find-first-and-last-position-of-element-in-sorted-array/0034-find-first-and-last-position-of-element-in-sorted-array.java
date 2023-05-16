@@ -5,33 +5,35 @@ class Solution {
         int[] arr=new int[2];
         arr[0]=-1;
         arr[1]=-1;
-         while(start<=end){
-            int mid=start+(end-start)/2;
+        
+        while(start<=end){
+          int mid=start+(end-start)/2;
             if(target==nums[mid]){
                 arr[0]=mid;
                 end=mid-1;
             }
+            else if(target>=nums[mid]){
+             start=mid+1;
+            }
             else if(target<=nums[mid]){
                 end=mid-1;
             }
-             else if(target>=nums[mid]){
-                start=mid+1;
-            }
-         }
-         start=0;end=nums.length-1;
-          while(start<=end){
+        }
+  start=0;
+  end=nums.length-1;
+        while(start<=end){
             int mid=start+(end-start)/2;
             if(target==nums[mid]){
                 arr[1]=mid;
                 start=mid+1;
             }
+            else if(target>=nums[mid]){
+             start=mid+1;
+            }
             else if(target<=nums[mid]){
                 end=mid-1;
             }
-             else if(target>=nums[mid]){
-                start=mid+1;
-            }
-         }
-         return arr;
+        }
+        return arr;
     }
 }
