@@ -2,37 +2,47 @@ class Solution {
     public void setZeroes(int[][] matrix) {
         int m=matrix.length;
         int n=matrix[0].length;
-        int r=0;
-        int c=0;
-        ArrayList<Integer> row=new ArrayList<>();
-         ArrayList<Integer> col=new ArrayList<>();
-        // int[] row=new int[10];
-        // int[] col=new int[10];
+        int row=1;
+        int col=1;
+       
         for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
+            if(matrix[i][0]==0) row=0;
+        }
+        for(int j=0;j<n;j++){
+            if(matrix[0][j]==0) col=0;
+        }
+        
+        for(int i=1;i<m;i++){
+            for(int j=1;j<n;j++){
                 if(matrix[i][j]==0){
-                 row.add(i);
-                 col.add(j);
+                    matrix[i][0]=0;
+                    matrix[0][j]=0;
                 }
             }
         }
-        
-        for(int i=0;i<row.size();i++){
-            int value=row.get(i);
-            for(int j=0;j<n;j++){
-                matrix[value][j]=0;
+       for(int i=1;i<m;i++){
+           if(matrix[i][0]==0){
+               for(int j=1;j<n;j++){
+                   matrix[i][j]=0;
+               }
+           }
+       }
+         for(int j=1;j<n;j++){
+             if(matrix[0][j]==0){
+                 for(int i=1;i<m;i++){
+                   matrix[i][j]=0;
+                  }
+             }
+         }
+        if(row==0){
+            for(int i=0;i<m;i++){
+                matrix[i][0]=0;
             }
         }
-         for(int i=0;i<col.size();i++){
-            int value=col.get(i);
-            for(int j=0;j<m;j++){
-                matrix[j][value]=0;
-            }
+        if(col==0){
+       for(int j=0;j<n;j++){
+       matrix[0][j]=0;
+       }
         }
-        
-        // for(int i=0;i<row.size();i++){
-        //      System.out.println(row.get(i));
-        // }
-        // System.out.println(Arrays.toString(col));
     }
 }
