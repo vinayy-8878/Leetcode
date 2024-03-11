@@ -3,8 +3,8 @@ class Solution {
         int index=0;
         int[] ans=new int[nums.length];
         for(int val:nums){
-        ans[index]=nums[nums[index]];
-            index++;
+        ans[index++]=nums[val];
+            // index++;
         }
         return ans;
     }
