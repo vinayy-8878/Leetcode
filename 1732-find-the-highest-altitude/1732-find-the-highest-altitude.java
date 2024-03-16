@@ -4,7 +4,7 @@ class Solution {
         int[] arr=new int[gain.length+1];
         int alt=0;
         for(int i=0;i<gain.length;i++){
-            arr[i+1]=gain[i]+alt;
+            arr[i+1]=gain[i]+arr[i];
             alt=arr[i+1];
             if(max<alt) max=alt;
         }
