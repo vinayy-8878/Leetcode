@@ -3,6 +3,7 @@ class Solution {
         if((r*c) !=(mat.length*mat[0].length)){
             return mat;
         }
+        if(r==mat.length && c==mat[0].length) return mat;
     int[][] ans=new int[r][c];
         int row=0;
         int col=0;
